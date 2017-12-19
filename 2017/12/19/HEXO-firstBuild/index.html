@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Hello World | Nima-Yu</title>
+  <title>Nima-Yu</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -172,34 +172,45 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2017-12-18T13:04:32.023Z" itemprop="datePublished">
-          2017-12-18
+      <time datetime="2017-12-19T09:12:16.929Z" itemprop="datePublished">
+          2017-12-19
       </time>
     
 </span>
-                <h1>Hello World</h1>
+                <h1></h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+      		<p>既然是第一次使用markdown来写东西，那就先说说搭建hexo博客的过程。</p>
+<ul>
+<li>git环境 </li>
+<li>hexo环境</li>
+<li><p>hexo 基本操作</p>
+<p>首先是git的环境，我们首先需要注册一个github账号，然后在本机上完成git环境的配置，下载并安装git bash<br>完成以后，配置本机到github上的连接</p>
+<p>hexo环境，打开git bash，在命令行中使用 npm i -g hexo ,第一次安装完成后，初始化 hexo init<br>之后就是在GitHub上搭建，创建。repo，名字为 <code>yourname.github.io</code><br>之后在gitbash中配置GitHub的帐户名，完成后修改 config.yml文件,修改如下</p>
+<p><code>deploy:
+type: git
+repo: https://github.com/YourgithubName/YourgithubName.github.io.git
+branch: master</code><br>完成上述步骤后，依次通过下面三个命令<br><code>hexo clean
+hexo generate
+hexo server</code></p>
+<p>以后每次修改博客都输入下面三个命令<br><code>hexo clean
+hexo generate
+hexo deploy</code></p>
+<p>到这里为止，基本的搭建就完成了，非常简单，blog默认主题为landscape，修改主题的话，先得 git其他主题的git文件，<br><code>git clone https://github.com/SuperKieran/TKL.git</code><br>这样我们的blog就会下载主题文件，之后只需要<br>修改config文件里的theme名称就可以了，主题的详细配置每个主题都不一样，需要按照它们自己的说明来。</p>
+<p>新建，修改博客文章的话，用markdown格式完成，随后放到posts文件夹中，更新博客就可以了</p>
+</li>
+</ul>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2017/12/19/HEXO-firstBuild/" style="float: left;">
-        ← 
-    </a>
     
+    <a class="pull-right" href="/2017/12/18/hello-world/">
+        Hello World →
+    </a>
     
 </nav>
 
