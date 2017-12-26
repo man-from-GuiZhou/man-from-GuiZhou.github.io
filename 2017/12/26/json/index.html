@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Archives: 2017/12 | Nima-Yu</title>
+  <title>json小总结 | Nima-Yu</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -59,7 +59,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -166,87 +166,82 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p>我是一个又蠢又懒的人。</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-
-
-
-
-<section id="services">
+      
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2017/12/26/json/">json小总结</a></h4>
-                            
-                            <p><time datetime="2017-12-26T06:17:21.589Z"><a href="/2017/12/26/json/">2017-12-26</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2017/12/19/HEXO-firstBuild/">hexo博客第一篇</a></h4>
-                            
-                            <p><time datetime="2017-12-19T09:12:16.929Z"><a href="/2017/12/19/HEXO-firstBuild/">2017-12-19</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2017/12/18/hello-world/">Hello World</a></h4>
-                            
-                            <p><time datetime="2017-12-18T13:04:32.023Z"><a href="/2017/12/18/hello-world/">2017-12-18</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2017-12-26T06:17:21.589Z" itemprop="datePublished">
+          2017-12-26
+      </time>
+    
+</span>
+                <h1>json小总结</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<hr>
+<h1 id="JSON小总结"><a href="#JSON小总结" class="headerlink" title="JSON小总结"></a>JSON小总结</h1><hr>
+<p>首先需要了解的json的一个结构，json文件中的数据结构可以分为object和array两种，以下面这个结构为例</p>
+<pre><code>{
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>所以做事爬也要爬过去 。</p>
+&quot;name&quot;:&quot;XXX&quot;,
+
+&quot;age&quot;:25.2,
+
+&quot;birthday&quot;:&quot;1990-01-01&quot;,
+
+&quot;major&quot;:[&quot;理发&quot;,&quot;挖掘机&quot;],
+
+&quot;has_girlfriend&quot;:false,
+
+&quot;car&quot;:null
+
+}
+</code></pre><p>从上面这个例子我们可以看出来，json当中的属性都是用””包围，数组则是以[]包围，所有具体的键值对都以”,”分割，json值支持数组、字符串、数字、布尔值和null。还有一点需要注意的是，json本身是以js为基础的，所以json本身是不能用”//“注释的，注释可以额外添加一个属性来描述。</p>
+<p>如何创建json对象</p>
+<p>以org.json为例，创建json对象主要有三种方式，第一是直接使用jsonObject来赋值，第二是先对一个Map赋值，然后把这个Map传给JsonObject，最后就是使用Javabean来创建。</p>
+<p>前面两种方法，它们对json的赋值方式都是相同的，例如 假设 NimaYu是一个JsonObject对象或者是一个Map对象，NimaYu.put(“name”,”NimaYu”)就是为NimaYu这个对象的“name”属性赋了一个“NimaYu”的值</p>
+<p>而第三种方法，即java bean方法，则是创建一个javabean class 文件，然后将对象作为参数传递给JsonObject，例如new JSONObject(NimaYu) ，NimaYu就是一个对象文件。</p>
+<p>读取json文件内容</p>
+<p>考虑到实际应用的问题，我们可能会需要读取文本形式的json文件，这里还是以JsonObject为例，我们利用common.io读取到了content文本，这个文本就是json文件的内容，JSONObject jsonObject = new JSONObject(content);这样就直接将相关的内容放到了jsonObject中，jsonObject.getString(“name”)这样就可以读取里面的内容，getString是取string格式的数据，括号内参数是json数据的属性。而对于数组这样的形式，JSONArray hobby=jsonObject.getJSONArray(“hobby”);这个范例中，JSONArray是我们所使用的数组对象，利用jsonObject对象的getJSONArray方法得到，参数为我们索取的属性，需要注意的是，JSONArray是Object类型，需要强制转换为我们需要的格式。</p>
+<p>使用Gson进行json的转换与解析</p>
+<p>相比较而言，先前使用的JsonObject的功能其实还是相当的原始，作为一个相当好用，同学倾力推荐的jar，现在就来看看Gson的入门使用。</p>
+<p>在Gson中，我还是以bean创建举例，这里，需要Gson gson = new Gson(),先获取一个Gson对象，然后利用gson.toJson(“NimaYu”)来获取Json对象，这里NimaYu就是我们使用的对象。获得Gson对象还可以利用GsonBuilder对象的create方法，该方法返回一个Gson对象。</p>
+<p>以这里的代码为例，GsonBuilder还可以对Json数据进行一些相关设置，</p>
+<pre><code>gsonBuilder.setPrettyPrinting();//格式化数据
+gsonBuilder.setFieldNamingStrategy(new FieldNamingStrategy() {//属性名设置
+public String translateName(Field field) {//field为反射对象，对应我们的Json
+if(field.getName().equals(&quot;hobby&quot;))
+{//获得&quot;hobby&quot;属性
+  return &quot;amusement&quot;;//显示时改为&quot;amusement&quot;
+   }
+  return field.getName();
+ }
+});
+</code></pre><p>需要注意的是，我们还可以在bean类属性名上加入注解 @SerializedName(“NAME”)，参数为更改后属性名，这个改名的优先级高于上面的方法改名。 而Gson的解析则非常简单，Person yuHao = gson.fromJson(content,Person.class);这里，Person是我们的bean类，content是json文件文本内容。Gson本身支持解析时的日期转换，方法是利用GsonBuilder类，这个类在这里只需要以gsonBuilder.setDateFormat(“yyyy-MM-dd”).create() 返回Gson对象即可，Gson对象就可以解析json文件里的日期，这个日期同时对应java当中的data格式</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="pagination" role="pagination">
+    
+    
+    <a class="pull-right" href="/2017/12/19/HEXO-firstBuild/">
+        hexo博客第一篇 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+
+
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 
