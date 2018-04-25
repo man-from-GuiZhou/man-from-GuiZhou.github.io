@@ -205,7 +205,7 @@
 <p> 3.controller配置</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> package com.example.controller;</span><br><span class="line"></span><br><span class="line">import org.slf4j.Logger;</span><br><span class="line">import org.slf4j.LoggerFactory;</span><br><span class="line">import org.springframework.stereotype.Controller;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"></span><br><span class="line">@Controller</span><br><span class="line">@RequestMapping(&quot;/home&quot;)</span><br><span class="line">public class HomeController &#123;</span><br><span class="line">    //添加一个日志器</span><br><span class="line">    private static final Logger logger = LoggerFactory.getLogger(HomeController.class);</span><br><span class="line"></span><br><span class="line">    //映射一个action</span><br><span class="line">    @RequestMapping(&quot;/index&quot;)</span><br><span class="line">    public String index()&#123;</span><br><span class="line">        //输出日志文件</span><br><span class="line">        logger.info(&quot;the first jsp pages&quot;);</span><br><span class="line">        System.out.println(&quot;controller index&quot;);</span><br><span class="line">        //返回一个index.jsp这个视图</span><br><span class="line">        return &quot;index&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这里采取注解方式来对单独的controller进行配置</p>
-<p>下面是实际访问界面，注意地址栏，因为先前没有配置，所以这里不用设置用户名</p>
+<p>下面是实际访问界面，注意地址栏，因为先前没有配置，所以这里不用设置项目名</p>
 <p><img src="/2018/04/24/springmvc-note-1/spirngmvc_1_step_5.jpg" alt="实际访问效果"></p>
 <p>最后贴一下项目文件夹路径：</p>
 <p><img src="/2018/04/24/springmvc-note-1/spirngmvc_1_step_6.jpg" alt="文件路径"></p>
@@ -215,9 +215,13 @@
         </div>
         <nav class="pagination" role="pagination">
     
+    <a class="pull-left" href="/2018/04/24/mybatis-note-1/" style="float: left;">
+        ← mybatis-note(1)
+    </a>
     
-    <a class="pull-right" href="/2018/04/23/springmvc笔记(1)/">
-         →
+    
+    <a class="pull-right" href="/2018/04/14/tuoyanzheng/">
+        《战胜拖延症》原则与策略总结 →
     </a>
     
 </nav>
